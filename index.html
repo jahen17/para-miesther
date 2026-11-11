@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff4f7" />
+    <meta name="description" content="Una pequeña sorpresa hecha con cariño para Esther." />
+    <title>Una cartita para Esther ♡</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="background-art" aria-hidden="true">
+      <span class="orb orb-one"></span>
+      <span class="orb orb-two"></span>
+      <span class="orb orb-three"></span>
+      <span class="sparkle sparkle-one">✧</span>
+      <span class="sparkle sparkle-two">✦</span>
+      <span class="sparkle sparkle-three">✧</span>
+      <span class="sparkle sparkle-four">✧</span>
+    </div>
+
+    <main class="app">
+      <!-- Pantalla inicial con barra de carga -->
+      <section class="loading-screen" id="loadingScreen" aria-label="Preparando tu sorpresa">
+        <div class="loading-card">
+          <div class="heart-animation" aria-hidden="true">
+            <span class="pulse-heart">♥</span>
+            <span class="orbit-heart orbit-heart-left">♥</span>
+            <span class="orbit-heart orbit-heart-right">♥</span>
+          </div>
+          <p class="eyebrow">UN DETALLITO PARA TI</p>
+          <h1>Preparando algo <em>bonito...</em></h1>
+          <p class="loading-copy">Porque hay personas que merecen una sorpresa ♡</p>
+          <div class="progress-container" role="progressbar" id="progressContainer" aria-label="Cargando sorpresa" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="progress-info">
+            <span>Empacando cariño...</span>
+            <span class="progress-percent" id="progressPercent">0%</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sorpresa que aparece tras la carga -->
+      <section class="experience" id="experience" hidden aria-label="Carta para Esther">
+        <header class="topbar">
+          <span class="logo">para esther <span aria-hidden="true">♡</span></span>
+          <span class="topbar-note">una cosita especial para ti</span>
+        </header>
+
+        <div class="content">
+          <p class="eyebrow"><span class="eyebrow-star" aria-hidden="true">✧</span> UNA CARTITA ESPECIAL <span class="eyebrow-star" aria-hidden="true">✧</span></p>
+          <h2>Esther, tienes un <em>mensajito</em> <span class="title-heart" aria-hidden="true">♡</span></h2>
+          <p class="subtitle">No es mucho, pero está hecho con mucho cariño.</p>
+
+          <div class="interaction-area" id="interactionArea">
+            <button class="envelope-button" id="envelopeButton" type="button" aria-label="Haz clic para abrir la carta para Esther">
+              <span class="envelope-shadow" aria-hidden="true"></span>
+              <span class="envelope" aria-hidden="true">
+                <span class="envelope-back"></span>
+                <span class="envelope-paper"><span class="paper-heart">♡</span><span class="paper-to">para Esther</span></span>
+                <span class="envelope-flap"></span>
+                <span class="envelope-front"></span>
+                <span class="envelope-seal">♥</span>
+              </span>
+            </button>
+
+            <p class="action-prompt" id="actionPrompt"><span aria-hidden="true">✦</span> Toca el sobre para abrir tu carta <span aria-hidden="true">✦</span></p>
+
+            <article class="letter" id="letter" aria-live="polite" aria-label="El mensaje de tu carta">
+              <span class="letter-corner corner-top" aria-hidden="true">✧</span>
+              <span class="letter-corner corner-bottom" aria-hidden="true">✧</span>
+              <div class="letter-heart" aria-hidden="true">♡</div>
+              <p class="letter-label">UNA COSITA QUE QUERÍA DECIRTE</p>
+              <h3>Te quiero mucho,<br /><em>Esther &lt;3</em></h3>
+              <div class="letter-line" aria-hidden="true"></div>
+              <p class="letter-message">Solo quería recordártelo y, de paso, sacarte una sonrisita hoy. 💗</p>
+              <p class="letter-signature">con mucho cariño <span aria-hidden="true">♡</span></p>
+            </article>
+          </div>
+
+          <div class="letter-actions">
+            <button class="replay-button" id="replayButton" type="button" hidden>↻ Volver a abrir la carta</button>
+            <button class="memories-button" id="memoriesButton" type="button" hidden>
+              <span aria-hidden="true">✧</span> Ver nuestros recuerdos <span aria-hidden="true">♡</span>
+            </button>
+          </div>
+        </div>
+
+        <footer class="footer">Hecho con cariño, solo para ti <span aria-hidden="true">♡</span></footer>
+      </section>
+    </main>
+
+    <!-- Álbum romántico: aparece al tocar "Ver nuestros recuerdos" -->
+    <section class="memories-overlay" id="memoriesOverlay" role="dialog" aria-modal="true" aria-label="gashias" tabindex="-1" hidden>
+      <div class="memories-panel">
+        <div class="memories-topbar">
+          <span class="memories-brand">un álbum para esther <span aria-hidden="true">♡</span></span>
+          <button class="memories-close" id="memoriesClose" type="button" aria-label="Cerrar álbum">✕</button>
+        </div>
+        <div class="memories-intro">
+          <p class="eyebrow">✧ UNA COLECCIÓN DE MOMENTITOS ✧</p>
+          <h2>Nuestros <em>recuerdos</em> <span aria-hidden="true">♡</span></h2>
+          <p>Hay momentos que parecen pequeños, pero se vuelven mis favoritos cuando son contigo.</p>
+        </div>
+        <div class="memories-grid" id="memoriesGrid" aria-label="Fotos de nuestros recuerdos"></div>
+        <p class="memories-outro">Te quiero mucho ♡</p>
+      </div>
+    </section>
+
+    <!-- Visor para ampliar las fotografías -->
+    <section class="photo-viewer" id="photoViewer" role="dialog" aria-modal="true" aria-label="Foto ampliada" tabindex="-1" hidden>
+      <button class="viewer-close" id="viewerClose" type="button" aria-label="Cerrar fotografía">✕</button>
+      <button class="viewer-nav viewer-prev" id="viewerPrev" type="button" aria-label="Foto anterior">❮</button>
+      <figure class="viewer-figure">
+        <img id="viewerImage" src="" alt="" />
+        <figcaption>
+          <span id="viewerTitle"></span>
+          <small id="viewerCount"></small>
+        </figcaption>
+      </figure>
+      <button class="viewer-nav viewer-next" id="viewerNext" type="button" aria-label="Foto siguiente">❯</button>
+    </section>
+
+    <div class="hearts-layer" id="heartsLayer" aria-hidden="true"></div>
+  </body>
+</html>
